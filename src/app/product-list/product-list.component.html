@@ -1,0 +1,74 @@
+<div class="product-list-wrapper">
+    <div class="product-list-con">
+        <div class="product-list-head">
+            <h1>Produktliste</h1>
+            <div (click)="toggleCreateProduct()" class="add-btn">
+                <img src="../../assets/lucide_plus.svg"/>
+                <h2>hinzufügen</h2>
+            </div>
+        </div>
+        <div class="product-list">
+            <div id="create-product" class="popup-wrapper">
+                <app-create-product class="create-product">       
+                </app-create-product>
+            </div>
+            <div id="delete-product" class="popup-wrapper">
+                <app-delete-product [id]="id" class="delete-product">       
+                </app-delete-product>
+            </div>
+            <div id="edit-product" class="popup-wrapper">
+                <app-edit-product [editPrice]="editPrice" [editName]="editName" [id]="id" class="edit-product">       
+                </app-edit-product>
+            </div>
+            <div class="products">
+                <div class="product-titles">
+                    <div class="product-item">
+                        <div class="product-name">
+                            <h2>Produkt</h2>
+                        </div>
+                        <div class="product-id">
+                            <h2>Artikelnummer</h2>
+                        </div>
+                        <div class="product-price">
+                            <h2>Preis</h2>
+                        </div>
+                        <div class="search-con">
+                            <img src="../../assets/ic_round-search.svg"/>
+                            <div class="line"></div>
+                            <input (keyup)="filterResults(filter.value)" #filter type="text" placeholder="Produktname"/>
+                        </div>
+                    </div>
+                </div>
+                <div id="loading-products" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                <div id="error-load" class="error-div">
+                    <p>Ups, es ist ein Fehler aufgetreten... Bitte versuche es später erneut!</p>
+                </div>
+                <ul  *ngFor="let product of filteredProducts">
+                    <li class="product-item">
+                        <div class="product-name">
+                            <h2>{{product.name}}</h2>
+                        </div>
+                        <div class="product-id">
+                            <h2>{{product.id}}</h2>
+                        </div>
+                        <div class="product-price">
+                            <h2>${{product.price}}</h2>
+                        </div>
+                        <div class="item-opt">
+                            <div (click)="toggleEditProduct(); setProduct(product.id,product.name,product.price)" class="edit-btn">
+                                <img src="../../assets/fluent_edit-24-filled.svg"/>
+                            </div>
+                            <div class="line"></div>
+                            <div (click)="toggleDeleteProduct(); setId(product.id)" class="delete-btn">
+                                <img src="../../assets/ic_baseline-delete.svg"/>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+

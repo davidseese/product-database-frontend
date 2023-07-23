@@ -1,0 +1,174 @@
+$dark-color: #A6A2A2;
+
+@mixin flex-center(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:host{
+    height: 100vh;
+    width: 80%;
+}
+.edit-product-wrapper{
+    @include flex-center();
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 2rem;
+
+    .edit-product-con{
+        @include flex-center();
+        flex-direction: column;
+        background-color: white;
+        border-radius: .5rem;
+        padding: 2rem;
+        border: 3px solid black;
+
+
+        .close-btn-con{
+            display: flex;
+            margin-left: auto;
+            user-select: none;
+            
+            div{
+                cursor: pointer;
+                @include flex-center();
+                border-radius: .5rem;
+                padding: .2rem;
+                background-color: $dark-color;
+            }
+        }
+
+        form{
+            @include flex-center();
+            flex-direction: column;
+            width: 100%;
+            
+            
+            .inputs{
+                @include flex-center();
+                flex-direction: column;
+                width: 100%;
+
+
+                .input-con{
+                    @include flex-center();
+                    background-color: transparent;
+                    width: 80%;
+                    border-radius: .5rem;
+                    padding: .5rem;
+                    margin-bottom: 1rem;
+                    border: 1px solid black;
+
+                    
+                    .img-con{
+                        @include flex-center();
+                    }
+                    .line{
+                        width: 0.0625rem;
+                        height: 1.5625rem;
+                        background-color: black;
+                        margin: 0 .2rem 0 .2rem;
+                    }
+                    input{
+                        width: 100%;
+                        background-color: transparent;
+                        border: none;
+                    }
+                    input:focus{
+                        outline: none;
+                    }
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                      -webkit-appearance: none;
+                      margin: 0;
+                    }
+                    input[type=number] {
+                      -moz-appearance: textfield;
+                    }
+                }
+                
+            }
+            .lds-ellipsis {
+                display: none;
+                position: relative;
+                width: 80px;
+                height: 80px;
+              }
+              .lds-ellipsis div {
+                position: absolute;
+                top: 33px;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: $dark-color;
+                animation-timing-function: cubic-bezier(0, 1, 1, 0);
+              }
+              .lds-ellipsis div:nth-child(1) {
+                left: 8px;
+                animation: lds-ellipsis1 0.6s infinite;
+              }
+              .lds-ellipsis div:nth-child(2) {
+                left: 8px;
+                animation: lds-ellipsis2 0.6s infinite;
+              }
+              .lds-ellipsis div:nth-child(3) {
+                left: 32px;
+                animation: lds-ellipsis2 0.6s infinite;
+              }
+              .lds-ellipsis div:nth-child(4) {
+                left: 56px;
+                animation: lds-ellipsis3 0.6s infinite;
+              }
+              @keyframes lds-ellipsis1 {
+                0% {
+                  transform: scale(0);
+                }
+                100% {
+                  transform: scale(1);
+                }
+              }
+              @keyframes lds-ellipsis3 {
+                0% {
+                  transform: scale(1);
+                }
+                100% {
+                  transform: scale(0);
+                }
+              }
+              @keyframes lds-ellipsis2 {
+                0% {
+                  transform: translate(0, 0);
+                }
+                100% {
+                  transform: translate(24px, 0);
+                }
+              }
+            .error-div{
+                text-align: center;
+                display: none;
+            }
+            .button-con{
+                @include flex-center();
+                width: 100%;
+                margin-top: 1rem;
+                button{ 
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: .5rem;
+                    border-width: 0;
+                    width: 60%;
+                    padding: 0;
+                    cursor: pointer;
+                    background-color: $dark-color;
+                 
+                    h2{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

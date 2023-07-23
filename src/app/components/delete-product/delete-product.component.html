@@ -1,0 +1,22 @@
+<div class="delete-product-wrapper">
+    <div class="delete-product-con">
+        <div (click)="toggleDeleteProduct()" class="close-btn-con">
+            <div>
+                <img src="../../assets/maki_cross.svg">
+            </div>
+        </div>
+        <h1>Produkt löschen?</h1>
+        <h2>Artikelnummer: {{id}}</h2>
+        <div id="loading-delete" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        <div id="error-delete" class="error-div">
+            <p>Ups, es ist ein Fehler aufgetreten... <br> Bitte versuche es später erneut!</p>
+        </div>
+        <div class="button-con">
+            <button (click)="handleDelete()">
+                <h2>Ja</h2>
+            </button>
+            <button (click)="handleNoDelete()"><h2>Nein</h2></button>
+        </div>
+        
+    </div>
+</div>

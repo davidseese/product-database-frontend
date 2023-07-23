@@ -1,0 +1,38 @@
+<div id="add-win" class="create-product-wrapper">
+    <div class="create-product-con">
+        <div (click)="toggleCreateProduct()" class="close-btn-con">
+            <div>
+                <img src="../../assets/maki_cross.svg">
+            </div>
+        </div>
+        <h1>Produkt erstellen</h1>
+        <form (submit)="handleCreateProduct($event)">
+            <div class="inputs">
+                <div class="input-con">
+                    <div class="img-con">
+                        <img src="../../assets/gg_rename.svg"/>
+                    </div>
+                    <div class="line"></div>
+                    <input (keyup)="setName($event)" id="name" type="text" required placeholder="Produktname"/>
+                </div>
+                <div class="input-con">
+                    <div class="img-con">
+                        <img src="../../assets/pepicons-pop_dollar.svg"/>
+                    </div>
+                    <div class="line"></div>
+                    <input (keyup)="setPrice($event)" type="number" step=".01" required placeholder="Produktpreis"/>
+                </div>
+            </div>
+            <div id="loading-create" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            <div id="error-create" class="error-div">
+                <p>Ups, es ist ein Fehler aufgetreten... <br> Bitte versuche es später erneut!</p>
+            </div>
+            <div class="button-con">
+
+                <button>
+                    <h2>Speichern</h2>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
